@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #292522;
+  background: #f2eee9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  --coral: #e85234;
+  --peach: #f9b8af;
+  --cream: #f2eee9;
+  --pink: #f2d7d3;
+  --ink: #292522;
+  --muted: #766b65;
+  --white: #fff;
+  --border: #e5ddd7;
+  --green: #58734e;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --shadow: 0 12px 35px rgba(63, 45, 35, .07);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select { font: inherit; }
+button { color: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid rgba(232, 82, 52, .3); outline-offset: 2px; }
+#root { min-height: 100vh; }
