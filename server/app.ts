@@ -94,6 +94,7 @@ function validResourcePayload(resource: string, data: Record<string, unknown>) {
   if (resource === 'fitness') return data.version === 1
     && records(data.workouts, (item) => calendarDate(item.date) && typeof item.workoutType === 'string' && ['completed', 'rest'].includes(String(item.status))
       && records(item.exercises, (exercise) => typeof exercise.exerciseName === 'string' && typeof exercise.order === 'number'
+        && optionalNonnegativeNumber(exercise.maxWeightKg) && (exercise.completed === undefined || typeof exercise.completed === 'boolean')
         && records(exercise.sets, (set) => optionalNonnegativeNumber(set.reps) && optionalNonnegativeNumber(set.weightKg) && optionalNonnegativeNumber(set.durationSeconds) && optionalNonnegativeNumber(set.distanceKm))))
     && records(data.bodyWeights, (item) => calendarDate(item.date) && typeof item.weightKg === 'number' && Number.isFinite(item.weightKg) && item.weightKg > 0)
     && Array.isArray(data.exerciseLibrary) && data.exerciseLibrary.every((name) => typeof name === 'string' && name.length <= 120)

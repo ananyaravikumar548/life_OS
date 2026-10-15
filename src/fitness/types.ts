@@ -12,6 +12,8 @@ export type ExerciseSet = {
 export type ExerciseEntry = {
   id: string
   exerciseName: string
+  maxWeightKg?: number
+  completed?: boolean
   muscleGroup?: string
   order: number
   sets: ExerciseSet[]

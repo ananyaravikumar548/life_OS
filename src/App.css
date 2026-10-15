@@ -273,3 +273,27 @@
 .app-loading { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #897e77; font-size: 13px; }
 .app-loading p { margin: 0; }
 
+
+/* Task completion and editing */
+.task-actions { display: flex; flex: none; align-items: center; gap: 2px; }
+.task-action-button { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid transparent; border-radius: 7px; color: #998d86; background: transparent; cursor: pointer; }
+.task-action-button:hover { border-color: #eee1d9; color: var(--coral); background: #fff8f5; }
+.task-action-button.delete:hover { border-color: #f2d7d2; color: #bc5e50; background: #fff5f2; }
+.tasks-empty { margin: 0; padding: 20px 10px; color: #a09690; font-size: 12px; text-align: center; }
+.completed-tasks-section { margin-top: 13px; border: 1px solid var(--border); border-radius: 10px; background: #fff; box-shadow: 0 3px 10px rgba(71, 48, 37, .025); }
+.completed-tasks-section > summary { display: flex; align-items: center; gap: 9px; padding: 14px 16px; color: #554a43; font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+.completed-tasks-section > summary::-webkit-details-marker { display: none; }
+.completed-tasks-section > summary::before { content: '›'; color: #9d8f86; font-size: 19px; line-height: 12px; transform: rotate(0); transition: transform .16s; }
+.completed-tasks-section[open] > summary::before { transform: rotate(90deg); }
+.completed-count { display: grid; min-width: 20px; height: 20px; place-items: center; border-radius: 20px; color: #7b6e65; background: #f4f0ec; font-size: 10px; }
+.completed-tasks-section .task-list { padding-inline: 16px; border-top: 1px solid #f0ebe7; }
+.task-dialog .priority-control { display: flex; justify-content: flex-start; align-items: center; gap: 8px; margin: 16px 0 0; cursor: pointer; }
+.task-dialog .priority-control input { width: 16px; height: 16px; margin: 0; accent-color: var(--coral); }
+@media (max-width: 580px) {
+  .task-row { gap: 8px; }
+  .task-actions { gap: 0; }
+  .task-action-button { width: 26px; height: 28px; }
+  .completed-tasks-section .task-list { padding-inline: 11px; }
+  .task-toolbar { align-items: flex-start; gap: 8px; }
+  .task-toolbar .task-section-meta { white-space: nowrap; }
+}

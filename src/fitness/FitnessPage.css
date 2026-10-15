@@ -169,6 +169,62 @@
 .fitness-toast button:hover { background: #f4efeb; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
 
+/* Compact date based workout checklist */
+.fitness-workout-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); align-items: start; gap: 14px; }
+.workout-editor-panel, .workout-history-panel { overflow: hidden; }
+.simple-workout-form { padding: 18px 20px 20px; }
+.workout-date-picker { display: flex; max-width: 320px; flex-direction: column; gap: 7px; color: #504741; font-size: 11px; font-weight: 600; }
+.workout-date-picker input, .simple-add-exercise input, .exercise-name-input, .exercise-max-weight input { min-width: 0; min-height: 38px; padding: 8px 10px; border: 1px solid #e4dcd6; border-radius: 7px; color: #403833; background: #fff; font: 400 12px 'Inter', sans-serif; }
+.simple-exercise-heading { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; }
+.simple-exercise-heading h3 { margin: 0; color: #4d433c; font-size: 13px; }
+.simple-exercise-heading p { margin: 4px 0 0; color: #9b9089; font-size: 10px; }
+.simple-add-exercise { display: flex; gap: 8px; margin-top: 11px; }
+.simple-add-exercise > input { flex: 1; }
+.simple-exercise-list { margin-top: 11px; border-top: 1px solid #f0ebe7; }
+.simple-exercise-row { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 9px 2px; border-bottom: 1px solid #f0ebe7; }
+.exercise-check { width: 17px; height: 17px; flex: none; accent-color: #7b8b6c; cursor: pointer; }
+.exercise-name-input { min-height: 34px; flex: 1; padding: 6px 8px; }
+.simple-exercise-row.completed .exercise-name-input { color: #928780; text-decoration: line-through; }
+.exercise-max-weight { display: flex; width: 102px; flex: none; flex-direction: column; gap: 3px; color: #9b9089; font-size: 9px; }
+.exercise-max-weight input { min-height: 31px; padding: 5px 7px; }
+.simple-exercise-row .fitness-icon-button { flex: none; }
+.simple-workout-actions { display: flex; justify-content: flex-end; margin-top: 15px; }
+.simple-workout-actions .primary-button { min-height: 37px; }
+.workout-date-groups { padding: 0 18px 8px; }
+.workout-date-group { padding: 13px 0 7px; border-bottom: 1px solid #f0ebe7; }
+.workout-date-group:last-child { border-bottom: 0; }
+.workout-date-group > h3 { margin: 0 0 9px; color: #574c45; font-size: 11px; font-weight: 600; }
+.workout-history-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 0; }
+.workout-history-exercises { display: flex; min-width: 0; flex: 1; flex-wrap: wrap; gap: 5px; }
+.workout-history-exercises > span { display: inline-flex; align-items: center; gap: 4px; padding: 4px 6px; border-radius: 5px; color: #776a62; background: #f6f2ee; font-size: 10px; }
+.workout-history-exercises > span.done { color: #677b5e; background: #f0f4ed; }
+.workout-history-row .workout-entry-actions { gap: 0; }
+.strength-progress-card { margin: 14px 20px 0; padding: 15px; border: 1px solid #eee6df; border-radius: 8px; background: #fffdfa; }
+.strength-progress-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.strength-progress-heading h3 { margin: 0; color: #4a413b; font-size: 13px; }
+.strength-progress-heading p { margin: 4px 0 0; color: #9a9089; font-size: 10px; }
+.strength-progress-heading .fitness-field { width: min(210px, 48%); }
+.strength-chart { margin-top: 15px; }
+.strength-chart svg { display: block; width: 100%; height: 150px; overflow: visible; }
+.strength-chart svg line { stroke: #eee7e1; stroke-width: .6; stroke-dasharray: 1.5 2; vector-effect: non-scaling-stroke; }
+.strength-chart svg path { fill: none; stroke: var(--coral); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.strength-chart svg circle { fill: white; stroke: var(--coral); stroke-width: 1.7; vector-effect: non-scaling-stroke; }
+.strength-chart-values { display: flex; justify-content: space-around; color: #806f64; font-size: 10px; }
+.strength-record-list { margin-top: 8px; border-top: 1px solid #f0ebe7; }
+.strength-record-list > div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 2px; border-bottom: 1px solid #f0ebe7; color: #81756e; font-size: 10px; }
+.strength-record-list strong { color: #584940; font-size: 11px; }
+@media (max-width: 850px) { .fitness-workout-layout { grid-template-columns: 1fr; } }
+@media (max-width: 580px) {
+  .simple-workout-form { padding: 14px; }
+  .fitness-workout-layout .fitness-panel-heading { flex-direction: row; }
+  .workout-date-groups { padding-inline: 13px; }
+  .strength-progress-card { margin-inline: 14px; }
+  .strength-progress-heading { flex-direction: column; }
+  .strength-progress-heading .fitness-field { width: 100%; }
+  .simple-exercise-row { gap: 6px; }
+  .exercise-max-weight { width: 76px; }
+}
+
 @media (max-width: 900px) {
   .fitness-page { padding-inline: 30px; }
   .fitness-summary-card { padding: 13px; gap: 9px; }

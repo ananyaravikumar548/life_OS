@@ -9,7 +9,8 @@
     "build:server": "tsc --noEmit -p tsconfig.server.json",
     "lint": "eslint .",
     "start:server": "tsx server/index.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:tasks": "mkdir -p node_modules/.tmp && esbuild tests/tasks.test.mjs --bundle --platform=node --format=esm --outfile=node_modules/.tmp/tasks.test.mjs && node --test node_modules/.tmp/tasks.test.mjs"
   },
   "dependencies": {
     "dotenv": "^17.4.2",

@@ -39,6 +39,8 @@ function parseExercise(value: unknown, index: number): ExerciseEntry | undefined
   return {
     id: value.id,
     exerciseName: value.exerciseName.trim(),
+    maxWeightKg: optionalNumber(value.maxWeightKg),
+    completed: typeof value.completed === 'boolean' ? value.completed : undefined,
     muscleGroup: optionalText(value.muscleGroup),
     order: typeof value.order === 'number' && Number.isFinite(value.order) ? value.order : index,
     sets,
